@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
 import { Link } from "react-router-dom";
-import MenuCard from '../Card/MenuCard'
+import MenuCard from "../Card/MenuCard";
+import { City } from "../Products/Products";
 
 function Main() {
-    return (
-        <>
-        <div className="w-full h-auto mt-16">
+  return (
+    <>
+      <div className="w-full h-auto mt-16">
         <div className="flex justify-center">
           <p className="text-5xl mx-5">Popular locations in</p>
           <img
@@ -25,31 +26,14 @@ function Main() {
       </div>
 
       <div className="grid gap-x-8 gap-y-4 px-[50px] grid-cols-3">
-        <Link to='/productlist'>
-        <MenuCard title="Kolkata Restaurants" />
-        </Link>
-        
-        <MenuCard title="Chennai Restaurants" />
-        <MenuCard title="Hyderabad Restaurants" />
-
-        <MenuCard title="Mumbai Restaurants" />
-        <MenuCard title="Bengaluru Restaurants" />
-        <MenuCard title="Delhi NCR Restaurants" />
-
-        <MenuCard title="Gangtok Restaurants" />
-        <MenuCard title="Indore Restaurants" />
-        <MenuCard title="Udaipur Restaurants" />
-
-        <MenuCard title="Ooty Restaurants" />
-        <MenuCard title="Manali Restaurants" />
-        <MenuCard title="Haridwar Restaurants" />
-
-        <MenuCard title="Goa Restaurants" />
-        <MenuCard title="Darjeeling Restaurants" />
-        <MenuCard title="Jammu Restaurants" />
+        {City.map((item, index) => (
+          <Link to="/productlist">
+            <MenuCard key={index} title={item} />
+          </Link>
+        ))}
       </div>
-      </>
-    )
+    </>
+  );
 }
 
-export default Main
+export default Main;
