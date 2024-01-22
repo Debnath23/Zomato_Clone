@@ -27,7 +27,7 @@ function Main() {
 
       <div className="grid gap-x-8 gap-y-4 px-[50px] grid-cols-3">
         {City.map((item, index) => (
-          <Link to="/productlist">
+          <Link to="/delivery">
             <MenuCard key={index} title={item} />
           </Link>
         ))}

@@ -1,5 +1,5 @@
 import Home from './pages/Home'
-import ProductsList from './pages/ProductsList'
+import Delivery from './pages/Delivery'
 import DiningOut from './pages/DiningOut'
 import NightLife from './pages/NightLife'
 import { Route, Routes } from 'react-router-dom'
@@ -10,9 +10,9 @@ function App() {
     <>
     <Routes>
       <Route path='/*' element={<Home />} />
-      <Route path='/productlist' element={<ProductsList/>} />
-      <Route path='/productlist/diningout' element={<DiningOut/>} />
-      <Route path='/productlist/nightlife' element={<NightLife/>} />
+      <Route path='/delivery' element={<Delivery/>} />
+      <Route path='/diningout' element={<DiningOut/>} />
+      <Route path='/nightlife' element={<NightLife/>} />
     </Routes>
     </>
   )
