@@ -72,7 +72,7 @@ function ProductsList() {
       <hr/>
     </div>
 
-      <div className="w-full flex mx-14">
+      <div className="w-full flex px-14 bg-white">
         <FilterBtn>Filters</FilterBtn>
         <Button>Rating: 4.0+</Button>
         <Button>Pure Veg</Button>

@@ -296,21 +296,21 @@ export const Brands = [
 ];
 
 export const City = [
-  'Kolkata',
-  'Chennai',
-  'Hyderabad',
-  'Mumbai',
-  'Bengaluru',
-  'Delhi NCR',
-  'Gantok',
-  'Indore',
-  'Udaipur',
-  'Ooty',
-  'Manali',
-  'Haridwar',
-  'Goa',
-  'Darjeeling',
-  'Jammu',
+  'Kolkata Restaurants',
+  'Chennai Restaurants',
+  'Hyderabad Restaurants',
+  'Mumbai Restaurants',
+  'Bengaluru Restaurants',
+  'Delhi NCR Restaurants',
+  'Gantok Restaurants',
+  'Indore Restaurants',
+  'Udaipur Restaurants',
+  'Ooty Restaurants',
+  'Manali Restaurants',
+  'Haridwar Restaurants',
+  'Goa Restaurants',
+  'Darjeeling Restaurants',
+  'Jammu Restaurants',
 ];
 
 export const DiningOutImage = [
