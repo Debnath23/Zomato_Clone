@@ -191,6 +191,10 @@ export const Products = [
   
 ];
 
+export const Cuisines = [
+  "Pizza", "Fast Food", "Biryani", "North Indian", "Desserts", "Bengali", "Sea Food", "Chinese", "Barger", "Oriental", "Bangladeshi", "Cake", "Continental", "Curry", "Afghani", "Grill", "Mishti", "Indian"
+]
+
 export const CarouselItems = [
   {
     img: 'https://b.zmtcdn.com/data/o2_assets/d0bd7c9405ac87f6aa65e31fe55800941632716575.png',
