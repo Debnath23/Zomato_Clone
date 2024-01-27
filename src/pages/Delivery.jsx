@@ -127,7 +127,7 @@ function ProductsList() {
         style={{ zIndex: 1000 }}
       >
         <Button>
-          {isCheckedRating && <FilterBtn filterCount={filterCount} />}
+          {(isCheckedRating || isCheckedPureVeg) && <FilterBtn filterCount={filterCount} />}
           <Filter />
           <p className="text-slate-500">Filters</p>
         </Button>
