@@ -37,7 +37,7 @@ export default function CuisinesBtn() {
   }, [searchTerm, originalOptions]);
 
   return (
-    <div className="m-10 w-[510px] h-[472.64px] bg-white rounded-md">
+    <div className="m-10 w-[510px] h-[472.64px] bg-white rounded-md shadow-2xl">
       <div className="rounded-md w-[510px] h-[396px] border-slate-500 px-[25px] pt-[25px] pb-[35px]">
         <p className="w-[460px] h-8 mb-4 text-2xl text-slate-800">Cuisines</p>
 

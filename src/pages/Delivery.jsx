@@ -16,23 +16,57 @@ import FilterBtn from "../components/Button/FilterBtn";
 
 function ProductsList() {
   const [filteredProducts, setFilteredProducts] = useState(Products);
+  const [filteredPureVegProducts, setFilteredPureVegProducts] =
+    useState(Products);
+  const [filteredBothProducts, setFilteredBothProducts] = useState(Products);
   const [isCheckedRating, setIsCheckedRating] = useState(false);
+  const [isCheckedPureVeg, setIsCheckedPureVeg] = useState(false);
   const [isCheckedCuisines, setIsCheckedCuisines] = useState(false);
-  const [numOfFilterItems, setNumOfFilterItems] = useState(0);
+  const [filterCount, setFilterCount] = useState(0);
 
   const handleRatingFilterToggle = () => {
     setIsCheckedRating(!isCheckedRating);
-    const filtered = Products.filter((product) => product.rating >= 4.0);
+
+    let filtered;
+    if (!isCheckedRating) {
+      filtered = Products.filter((product) => product.rating >= 4.0);
+      setFilterCount((prevCount) => prevCount + 1);
+    } else {
+      filtered = Products;
+      setFilterCount((prevCount) => prevCount - 1);
+    }
     setFilteredProducts(filtered);
   };
+
+  const handlePureVegFilterToggle = () => {
+    setIsCheckedPureVeg(!isCheckedPureVeg);
+
+    let filtered;
+    if (!isCheckedPureVeg) {
+      filtered = Products.filter((product) => product.pureVeg == true);
+      setFilterCount((prevCount) => prevCount + 1);
+    } else {
+      filtered = Products;
+      setFilterCount((prevCount) => prevCount - 1);
+    }
+    setFilteredPureVegProducts(filtered);
+  };
+
+  useEffect(() => {
+    const filtered = Products.filter((product) => {
+      return (
+        isCheckedRating &&
+        product.rating >= 4.0 &&
+        isCheckedPureVeg &&
+        product.pureVeg === true
+      );
+    });
+    setFilteredBothProducts(filtered);
+  }, [isCheckedRating, isCheckedPureVeg]);
 
   const handleCuisinesFilterToggle = () => {
     setIsCheckedCuisines(!isCheckedCuisines);
   };
-
-  useEffect(() => {
-    setNumOfFilterItems(Number(numOfFilterItems) + 1);
-  }, [isCheckedRating, isCheckedCuisines])
 
   return (
     <div>
@@ -92,12 +126,12 @@ function ProductsList() {
         className="w-full flex px-14 bg-white sticky top-0"
         style={{ zIndex: 1000 }}
       >
-        <Button 
-        onChange={<FilterBtn/>}
-        >
-          <Filter/>
-          Filters
+        <Button>
+          {isCheckedRating && <FilterBtn filterCount={filterCount} />}
+          <Filter />
+          <p className="text-slate-500">Filters</p>
         </Button>
+
         <Button
           className={`${
             isCheckedRating
@@ -115,29 +149,50 @@ function ProductsList() {
             <div>Rating: 4.0+</div>
           )}
         </Button>
-        <Button className="fill-current text-slate-500">Pure Veg</Button>
-        <div className="relative">
+
         <Button
-          className="fill-current text-slate-500"
-          onClick={handleCuisinesFilterToggle}
+          className={`${
+            isCheckedPureVeg
+              ? "bg-red-400 text-slate-100"
+              : "fill-current text-slate-500"
+          }`}
+          onClick={handlePureVegFilterToggle}
         >
-          Cuisines
-          <svg className="w-[18px] h-[18px]">
-            <path d="M4.48 7.38c0.28-0.28 0.76-0.28 1.060 0l4.46 4.48 4.48-4.48c0.28-0.28 0.76-0.28 1.060 0s0.28 0.78 0 1.060l-5 5c-0.3 0.3-0.78 0.3-1.060 0l-5-5c-0.3-0.28-0.3-0.76 0-1.060z"></path>
-          </svg>
+          {isCheckedPureVeg ? (
+            <div className="flex">
+              Pure Veg
+              <Cross />
+            </div>
+          ) : (
+            <div>Pure Veg</div>
+          )}
         </Button>
-        {isCheckedCuisines && (
-          <div style={{
-            position: 'absolute',
-            top: '100%',
-            left: 0,
-            zIndex: 1,
-          }}>
-            <CuisinesBtn/>
-          </div>
-        )}
+
+        <div className="relative">
+          <Button
+            className="fill-current text-slate-500"
+            onClick={handleCuisinesFilterToggle}
+          >
+            Cuisines
+            <svg className="w-[18px] h-[18px]">
+              <path d="M4.48 7.38c0.28-0.28 0.76-0.28 1.060 0l4.46 4.48 4.48-4.48c0.28-0.28 0.76-0.28 1.060 0s0.28 0.78 0 1.060l-5 5c-0.3 0.3-0.78 0.3-1.060 0l-5-5c-0.3-0.28-0.3-0.76 0-1.060z"></path>
+            </svg>
+          </Button>
+          {isCheckedCuisines && (
+            <div
+              style={{
+                position: "absolute",
+                top: "100%",
+                left: 0,
+                zIndex: 1,
+              }}
+            >
+              <CuisinesBtn />
+            </div>
+          )}
         </div>
       </div>
+
       <Carousel items={CarouselItems} />
       <CarouselBrand items={Brands} />
 
@@ -146,8 +201,16 @@ function ProductsList() {
           Best Food In Your City
         </h1>
         <div className="grid gap-x-4 gap-y-3 px-[30px] grid-cols-3">
-          {isCheckedRating
+          {isCheckedRating && isCheckedPureVeg
+            ? filteredBothProducts.map((product) => (
+                <Card key={product.id} data={product} />
+              ))
+            : isCheckedRating
             ? filteredProducts.map((product) => (
+                <Card key={product.id} data={product} />
+              ))
+            : isCheckedPureVeg
+            ? filteredPureVegProducts.map((product) => (
                 <Card key={product.id} data={product} />
               ))
             : Products.map((product) => (

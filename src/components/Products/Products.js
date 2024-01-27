@@ -7,6 +7,7 @@ export const Products = [
     rating: 4.4,
     deliveryTime: "30 min",
     forOne: 100,
+    pureVeg: false,
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const Products = [
     rating: 4.2,
     deliveryTime: "29 min",
     forOne: 200,
+    pureVeg: false,
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ export const Products = [
     rating: 4.4,
     deliveryTime: "44 min",
     forOne: 100,
+    pureVeg: false,
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ export const Products = [
     rating: 4.1,
     deliveryTime: "51 min",
     forOne: 250,
+    pureVeg: false,
   },
   {
     id: 5,
@@ -43,6 +47,7 @@ export const Products = [
     rating: 3.6,
     deliveryTime: "20 min",
     forOne: 200,
+    pureVeg: false,
   },
   {
     id: 6,
@@ -52,6 +57,7 @@ export const Products = [
     rating: 3.9,
     deliveryTime: "32 min",
     forOne: 200,
+    pureVeg: true,
   },
   {
     id: 7,
@@ -61,6 +67,7 @@ export const Products = [
     rating: 3.9,
     deliveryTime: "36 min",
     forOne: 100,
+    pureVeg: false,
   },
   {
     id: 8,
@@ -70,6 +77,7 @@ export const Products = [
     rating: 4.1,
     deliveryTime: "28 min",
     forOne: 100,
+    pureVeg: false,
   },
   {
     id: 9,
@@ -79,6 +87,7 @@ export const Products = [
     rating: 4.1,
     deliveryTime: "33 min",
     forOne: 100,
+    pureVeg: false,
   },
   {
     id: 10,
@@ -88,6 +97,7 @@ export const Products = [
     rating: 3.8,
     deliveryTime: "45 min",
     forOne: 100,
+    pureVeg: false,
   },
   {
     id: 11,
@@ -97,6 +107,7 @@ export const Products = [
     rating: 4.1,
     deliveryTime: "54 min",
     forOne: 100,
+    pureVeg: true,
   },
   {
     id: 12,
@@ -106,6 +117,7 @@ export const Products = [
     rating: 4.1,
     deliveryTime: "35 min",
     forOne: 150,
+    pureVeg: true,
   },
   {
     id: 13,
@@ -115,6 +127,7 @@ export const Products = [
     rating: 3.5,
     deliveryTime: "45 min",
     forOne: 150,
+    pureVeg: false,
   },
   {
     id: 14,
@@ -124,6 +137,7 @@ export const Products = [
     rating: 3.5,
     deliveryTime: "30 min",
     forOne: 150,
+    pureVeg: false,
   },
   {
     id: 15,
@@ -133,6 +147,7 @@ export const Products = [
     rating: 3.8,
     deliveryTime: "35 min",
     forOne: 100,
+    pureVeg: false,
   },
   {
     id: 16,
@@ -142,6 +157,7 @@ export const Products = [
     rating: 3.8,
     deliveryTime: "37 min",
     forOne: 100,
+    pureVeg: false,
   },
   {
     id: 17,
@@ -151,6 +167,7 @@ export const Products = [
     rating: 4.4,
     deliveryTime: "45 min",
     forOne: 150,
+    pureVeg: false,
   },
   {
     id: 18,
@@ -160,6 +177,7 @@ export const Products = [
     rating: 4.1,
     deliveryTime: "52 min",
     forOne: 100,
+    pureVeg: false,
   },
   {
     id: 19,
@@ -169,6 +187,7 @@ export const Products = [
     rating: 4.4,
     deliveryTime: "42 min",
     forOne: 150,
+    pureVeg: false,
   },
   {
     id: 20,
@@ -178,6 +197,7 @@ export const Products = [
     rating: 4.5,
     deliveryTime: "33 min",
     forOne: 150,
+    pureVeg: false,
   },
   {
     id: 21,
@@ -187,7 +207,18 @@ export const Products = [
     rating: 3.9,
     deliveryTime: "43 min",
     forOne: 250,
+    pureVeg: false,
   },
+  {
+    id: 22,
+    image:"https://b.zmtcdn.com/data/pictures/5/18754475/93d91c292cb2562bce42a66142632fe7_o2_featured_v2.jpg",
+    title: "Agarwal's Kitchen",
+    description: "North Indian, South Indian",
+    rating: 3.9,
+    deliveryTime: "28 min",
+    forOne: 150,
+    pureVeg: true,
+  }
   
 ];
 
