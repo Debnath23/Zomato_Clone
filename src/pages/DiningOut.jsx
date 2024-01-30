@@ -1,12 +1,11 @@
 import Footer from "../components/Main/Footer";
 import SearchBar from "../components/Main/SearchBar";
 import Button from "../components/Button/Button";
-import FilterBtn from "../components/Button/FilterBtn";
 import GoldBtn from "../components/Button/GoldBtn";
 import CollectionsCarousel from "../components/Carousel/CollectionsCarousel";
 import { DiningOutImage } from "../components/Products/Products";
-import { Products } from "../components/Products/Products";
-import Card from "../components/Card/Card";
+import { DiningOutProducts } from "../components/Products/Products";
+import DiningOutCard from "../components/Card/DiningOutCard";
 import { Link } from 'react-router-dom';
 import Filter from "../components/Icons/Filter";
 
@@ -99,8 +98,8 @@ function DiningOut() {
 
       <div>
         <div className="grid gap-x-4 gap-y-3 mx-[209.6px] grid-cols-3">
-          {Products.map((item) => (
-            <Card key={item.id} data={item} />
+          {DiningOutProducts.map((item) => (
+            <DiningOutCard key={item.id} data={item} />
           ))}
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import Star from "../Icons/Star";
 
 const Card = ({data})=> {  
   const {image, title, description, rating, deliveryTime, forOne} = data;
@@ -19,7 +20,7 @@ const Card = ({data})=> {
                 <p>{title}</p>
               </div>
               <div className="w-1/4 flex items-end">
-                <p className="p-[2px] bg-green-800 rounded-md text-white">{rating}</p>
+                <p className="p-[2px] flex bg-green-800 rounded-md text-white">{rating} <Star/> </p>
               </div>
             </div>
 
@@ -28,7 +29,7 @@ const Card = ({data})=> {
                 <p>{description}</p>
               </div>
               <div className="w-1/3 flex items-end">
-                <p className="text-md">{forOne} for one</p>
+                <p className="text-md">₹{forOne} for one</p>
               </div>
             </div>
 
