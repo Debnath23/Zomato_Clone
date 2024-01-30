@@ -72,8 +72,8 @@ function ProductsList() {
     <div>
       <SearchBar />
 
-      <div className="h-auto mt-8">
-        <div className="w-auto mx-12 flex">
+      <div className="h-auto mt-8 mx-[209.6px]">
+        <div className="w-auto flex">
           <Link to="/delivery">
             <div>
               <div className="flex w-[189px] mx-4 cursor-pointer">
@@ -123,7 +123,7 @@ function ProductsList() {
       </div>
 
       <div
-        className="w-full flex px-14 bg-white sticky top-0"
+        className="w-full flex  mx-[209.6px] bg-white sticky top-0"
         style={{ zIndex: 1000 }}
       >
         <Button>
@@ -196,11 +196,11 @@ function ProductsList() {
       <Carousel items={CarouselItems} />
       <CarouselBrand items={Brands} />
 
-      <div>
-        <h1 className="w-[1100px] h-[36px] text-[30px] my-[20px] mx-[52px]">
+      <div className="px-[209.6px]">
+        <h1 className="w-[1100px] h-[36px] text-[30px] my-[20px]">
           Best Food In Your City
         </h1>
-        <div className="grid gap-x-4 gap-y-3 px-[30px] grid-cols-3">
+        <div className="grid gap-x-4 gap-y-3 grid-cols-3">
           {isCheckedRating && isCheckedPureVeg
             ? filteredBothProducts.map((product) => (
                 <Card key={product.id} data={product} />

@@ -13,7 +13,7 @@ function Carousel({items}) {
       
         return (
             <div className='w-full'>
-          <div className='mx-[57.86px] py-4 my-10'>
+          <div className='mx-[209.6px] py-4 my-10'>
             <h1 className='my-8 ml-[6px] text-3xl'>Top brands for you</h1>
             <Slider {...settings}>
             

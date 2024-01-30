@@ -2,11 +2,11 @@ import React from 'react'
 
 function Footer() {
     return (
-        <div className="bg-slate-100 bg-w-full bg-h-full h-[500px] ">
-        <div className="grid gap-x-8 gap-y-4 px-[60px] py-[50px] grid-cols-4 mt-[50px] mx-10 ">
-            <div className='text-xl '>
+        <div className="bg-slate-100 h-[400px] ">
+        <div className="grid grid-cols-4 mt-[30px] mx-[209.6px] pt-10">
+            <div className='text-lg '>
                 <nav>
-                    <h6 className='font-semibold text-3xl my-3'>ABOUT ZOMATO</h6>
+                    <h6 className='font-semibold text-2xl'>ABOUT ZOMATO</h6>
                     <a href="#" >
                         <p className='my-3 text-slate-500'>Who We Are</p>
                     </a>
@@ -30,9 +30,9 @@ function Footer() {
                     </a>
                 </nav>
             </div>
-            <div className='text-xl '>
+            <div className='text-lg '>
                 <nav>
-                    <h6 className='font-semibold text-3xl my-3'>ZOMAVERSE</h6>
+                    <h6 className='font-semibold text-2xl'>ZOMAVERSE</h6>
                     <a href="#" >
                         <p className='my-3 text-slate-500'>Zomato</p>
                     </a>
@@ -50,9 +50,9 @@ function Footer() {
                     </a>
                 </nav>
             </div>
-            <div className='text-xl '>
+            <div className='text-lg '>
                 <nav>
-                    <h6 className='font-semibold text-3xl my-3'>FOR RESTAURANTS</h6>
+                    <h6 className='font-semibold text-2xl'>FOR RESTAURANTS</h6>
                     <a href="#" >
                         <p className='my-3 text-slate-500'>Partner With Us</p>
                     </a>
@@ -67,9 +67,9 @@ function Footer() {
                     </a>
                 </nav>
             </div>
-            <div className='text-xl '>
+            <div className='text-lg '>
                 <nav>
-                    <h6 className='font-semibold text-3xl my-3'>LEARN MORE</h6>
+                    <h6 className='font-semibold text-2xl'>LEARN MORE</h6>
                     <a href="#" >
                         <p className='my-3 text-slate-500'>Privacy</p>
                     </a>

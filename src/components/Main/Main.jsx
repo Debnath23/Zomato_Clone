@@ -25,7 +25,7 @@ function Main() {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 ml-7">
+      <div className="grid grid-cols-3 px-[200px]">
         {City.map((item, index) => (
           <Link to="/delivery">
             <MenuCard key={index} title={item} />

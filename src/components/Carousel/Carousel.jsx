@@ -12,8 +12,8 @@ function Carousel({items}) {
           };
       
         return (
-            <div className='w-full bg-slate-100'>
-          <div className='mx-[57.86px] py-4'>
+            <div className='w-full bg-slate-50'>
+          <div className=' mx-[209.6px] py-4'>
             <h1 className='my-8 ml-4 text-3xl'>Inspriraton for your first order</h1>
             <Slider {...settings}>
             

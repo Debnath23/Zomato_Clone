@@ -3,8 +3,8 @@ import CaretDown from '../../img/caret-down-icon.svg'
 
 function SearchBar() {
   return (
-    <div className='w-full h-[72px] flex'>
-      <div className='h-full mx-12 flex'>
+    <div className='w-full h-[72px] flex mx-[209.6px]'>
+      <div className='h-full flex'>
         <div className='h-full p-4' >
         <img className='w-[127px] h-[27px]' src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png" alt="zomato logo" />
         </div>
@@ -46,11 +46,8 @@ function SearchBar() {
         </div>
         <div className='text-[20px] w-[67px] h-[39px] p-2 ml-[64px] mt-4 text-slate-500'>Login</div>
 
-      <div className='text-[20px] w-[99px] h-[39px] p-2 mx-4 mt-4 text-slate-500'>Sign up</div>
+      <div className='text-[20px] w-[99px] h-[39px] p-2 ml-4 mt-4 text-slate-500'>Sign up</div>
       </div>
-
-      
-
     </div>
   )
 }

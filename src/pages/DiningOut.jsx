@@ -7,16 +7,17 @@ import CollectionsCarousel from "../components/Carousel/CollectionsCarousel";
 import { DiningOutImage } from "../components/Products/Products";
 import { Products } from "../components/Products/Products";
 import Card from "../components/Card/Card";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import Filter from "../components/Icons/Filter";
 
 function DiningOut() {
   return (
     <div>
       <SearchBar />
       
-      <div className="h-auto mt-8">
-      <div className="w-auto mx-12 flex">
-        <Link to="/derivery">
+      <div className="h-auto mt-8 mx-[209.6px]">
+      <div className="w-auto flex">
+        <Link to="/delivery">
           <div>
             <div className="flex w-[189px] mx-4 cursor-pointer">
               <div
@@ -75,8 +76,12 @@ function DiningOut() {
       </div>
 
       
-      <div className="flex mx-12">
-        <FilterBtn>Filters</FilterBtn>
+      <div className="flex mx-[209.6px]">
+      <Button>
+          {/* {(isCheckedRating || isCheckedPureVeg) && <FilterBtn filterCount={filterCount} />} */}
+          <Filter />
+          <p className="text-slate-500">Filters</p>
+        </Button>
         <GoldBtn>Gold</GoldBtn>
         <Button>Rating: 4.0+</Button>
         <Button>Outdoor Seating</Button>
@@ -84,16 +89,16 @@ function DiningOut() {
         <Button>Open Now</Button>
         </div>
 
-      <div className="mx-12">
+      <div className="mx-[209.6px]">
         <img src="https://b.zmtcdn.com/data/o2_assets/da94405b04f6ae6bf64a4e2a01b1b5c11686563732.png"
         className=""
         alt="banner" />
       </div>
 
-      <div className="text-[30px] mt-[10px] mb-8 mx-12">Trending dining restaurants in your City</div>
+      <div className="text-[30px] mt-[10px] mb-8 mx-[209.6px]">Trending dining restaurants in your City</div>
 
       <div>
-        <div className="grid gap-x-4 gap-y-3 px-[30px] grid-cols-3">
+        <div className="grid gap-x-4 gap-y-3 mx-[209.6px] grid-cols-3">
           {Products.map((item) => (
             <Card key={item.id} data={item} />
           ))}

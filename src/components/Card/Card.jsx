@@ -3,7 +3,7 @@ import React from "react";
 const Card = ({data})=> {  
   const {image, title, description, rating, deliveryTime, forOne} = data;
   return (
-    <div className="mt-5 p-4">
+    <div className="mt-5">
       <div className="rounded-lg  hover:shadow-lg hover:border-solid hover:border-2 hover:border-slate-100 cursor-pointer  max-w-sm mx-auto bg-auto p-1 overflow-hidden">
         <div className="">
           <img
