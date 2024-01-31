@@ -1,5 +1,5 @@
 import React from 'react'
-import CaretDown from '../../img/caret-down-icon.svg'
+import { FaCaretDown } from "react-icons/fa";
 
 function SearchBar() {
   return (
@@ -22,9 +22,7 @@ function SearchBar() {
           </div>
           
           <div className='my-[6px] '>
-            <img src={CaretDown}
-            className='w-full h-4 '
-            alt="caret down icon" />
+            <FaCaretDown />
           </div>
           
           </div>

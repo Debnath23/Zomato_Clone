@@ -21,7 +21,7 @@ function Carousel({items}) {
                 <div key={index} className='h-[188px]'>
                     <img src={item.img}
                     className='w-[150px] h-[150px] rounded-full' />
-                    <p className='text-[20px] pr-4 mt-[6px] text-slate-600 flex text-center justify-center'>{item.title}</p>
+                    <p className='text-[20px] pr-8 mt-[6px] text-slate-600 flex items-center justify-center'>{item.title}</p>
                 </div>
               ))}
             
