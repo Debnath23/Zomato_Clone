@@ -16,8 +16,7 @@ import FilterBtn from "../components/Button/FilterBtn";
 
 function ProductsList() {
   const [filteredProducts, setFilteredProducts] = useState(Products);
-  const [filteredPureVegProducts, setFilteredPureVegProducts] =
-    useState(Products);
+  const [filteredPureVegProducts, setFilteredPureVegProducts] = useState(Products);
   const [filteredBothProducts, setFilteredBothProducts] = useState(Products);
   const [isCheckedRating, setIsCheckedRating] = useState(false);
   const [isCheckedPureVeg, setIsCheckedPureVeg] = useState(false);

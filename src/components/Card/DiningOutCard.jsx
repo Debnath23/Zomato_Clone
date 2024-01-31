@@ -1,5 +1,4 @@
 import React from "react";
-import Star from "../Icons/Star";
 import { CiStar } from "react-icons/ci";
 
 const DiningOutCard = ({data})=> {  
@@ -21,16 +20,16 @@ const DiningOutCard = ({data})=> {
                 <p>{title}</p>
               </div>
               <div className="flex justify-end">
-                <p className="px-[2px] flex items-center justify-center bg-green-800 rounded-md text-white">{rating} <CiStar /></p>
+                <p className="px-[2px] flex items-center justify-center bg-green-800 rounded-md text-white">{rating} <CiStar className="w-[18px] h-[18px]" /></p>
               </div>
             </div>
 
             <div className="flex my-[2px] justify-between text-lg text-slate-500">
-              <div className="flex items-start truncate">
+              <div className="truncate">
                 <p>{description}</p>
               </div>
               <div className="flex items-end">
-                <p className="text-md">₹{forTwo} for two</p>
+                <p className="text-md flex">₹{forTwo} for two</p>
               </div>
             </div>
 

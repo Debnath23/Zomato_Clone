@@ -1,5 +1,5 @@
 import React from "react";
-import Star from "../Icons/Star";
+import { CiStar } from "react-icons/ci";
 
 const Card = ({data})=> {  
   const {image, title, description, rating, deliveryTime, forOne} = data;
@@ -15,25 +15,25 @@ const Card = ({data})=> {
         </div>
         <div className="p-1 mt-1">
           <div>
-            <div className="flex my-1 text-2xl text-black">
-              <div className="w-3/4 flex items-start overflow-x-auto">
+            <div className="flex my-1 justify-between text-2xl text-black">
+              <div className="flex">
                 <p>{title}</p>
               </div>
-              <div className="w-1/4 flex items-end">
-                <p className="p-[2px] flex bg-green-800 rounded-md text-white">{rating} <Star/> </p>
+              <div className="flex items-end">
+              <p className="px-[2px] flex items-center justify-center bg-green-800 rounded-md text-white">{rating} <CiStar className="w-[18px] h-[18px]" /></p>
               </div>
             </div>
 
-            <div className="flex my-[2px] text-lg text-slate-500">
-              <div className="w-3/4 flex items-start overflow-x-auto  ">
+            <div className="flex my-[2px] justify-between text-lg text-slate-500">
+              <div className="flex items-start truncate">
                 <p>{description}</p>
               </div>
-              <div className="w-1/3 flex items-end">
+              <div className="flex items-end">
                 <p className="text-md">₹{forOne} for one</p>
               </div>
             </div>
 
-            <div className="flex items-end mt-[2px] text-md">
+            <div className="flex justify-end mt-[2px] text-md">
               <p>{deliveryTime}</p>
             </div>
           </div>
