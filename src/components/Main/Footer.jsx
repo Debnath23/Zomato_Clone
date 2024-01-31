@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div className="bg-slate-100 h-[400px] ">
       
-      <div className="grid grid-cols-4 mt-[30px] mx-[209.6px] pt-10">
+      <div className="grid grid-cols-4 mt-[30px] ml-[209.6px] pt-10">
         <div className="text-lg ">
         {/* <div className="h-full p-4">
         <img

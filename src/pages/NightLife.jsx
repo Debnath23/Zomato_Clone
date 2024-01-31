@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react"
 import Footer from '../components/Main/Footer'
 import SearchBar from '../components/Main/SearchBar'
 import FilterBtn from '../components/Button/FilterBtn'
@@ -5,17 +6,65 @@ import GoldBtn from '../components/Button/GoldBtn'
 import Button from '../components/Button/Button'
 import CollectionsCarousel from '../components/Carousel/CollectionsCarousel'
 import { NightLifeImage } from '../components/Products/Products'
-import { Products } from '../components/Products/Products'
-import Card from '../components/Card/Card'
+import { DiningOutNightLifeProducts } from '../components/Products/Products'
+import DiningOutCard from '../components/Card/DiningOutCard'
 import { Link } from 'react-router-dom'
 import Filter from '../components/Icons/Filter'
+import Cross from "../components/Icons/Cross"
 
 function NightLife() {
+  const [filteredRatingProducts, setFilteredRatingProducts] = useState(DiningOutNightLifeProducts);
+  const [filteredPubsBarsProducts, setFilteredPubsBarsProducts] = useState(DiningOutNightLifeProducts);
+  const [filteredBothsProducts, setFilteredBothsProducts] = useState(DiningOutNightLifeProducts);
+  const [isCheckedRating, setIsCheckedRating] = useState(false);
+  const [isCheckedPubsBars, setIsCheckedPubsBars] = useState(false);
+  const [filterCount, setFilterCount] = useState(0);
+
+  const handleRatingFilterToggle = () => {
+    setIsCheckedRating(!isCheckedRating);
+
+    let filtered;
+    if (!isCheckedRating) {
+      filtered = DiningOutNightLifeProducts.filter((product) => product.rating >= 4.0);
+      setFilterCount((prevCount) => prevCount + 1);
+    } else {
+      filtered = DiningOutNightLifeProducts;
+      setFilterCount((prevCount) => prevCount - 1);
+    }
+    setFilteredRatingProducts(filtered);
+  };
+
+  const handlePubsBarsFilterToggle = () => {
+    setIsCheckedPubsBars(!isCheckedPubsBars);
+
+    let filtered;
+    if (!isCheckedPubsBars) {
+      filtered = DiningOutNightLifeProducts.filter((product) => product.pubsBars == true);
+      setFilterCount((prevCount) => prevCount + 1);
+    } else {
+      filtered = DiningOutNightLifeProducts;
+      setFilterCount((prevCount) => prevCount - 1);
+    }
+    setFilteredPubsBarsProducts(filtered);
+  };
+
+  useEffect(() => {
+    const filtered = DiningOutNightLifeProducts.filter((product) => {
+      return (
+        isCheckedRating &&
+        product.rating >= 4.0 &&
+        isCheckedPubsBars &&
+        product.pubsBars === true 
+      );
+    });
+    setFilteredBothsProducts(filtered);
+  }, [isCheckedRating, isCheckedPubsBars]);
+
   return (
     <div>
       <SearchBar />
       
-      <div className="h-auto mt-8 mx-[209.6px]">
+      <div className="h-auto mt-8 ml-[209.6px]">
       <div className="w-auto flex">
         <Link to="/delivery">
           <div>
@@ -70,20 +119,55 @@ function NightLife() {
       </div>
       <hr/>
     </div>
+    <hr />
 
       <div>
         <CollectionsCarousel items={NightLifeImage}/>
       </div>
 
-      <div className="flex mx-[209.6px]">
+      <div className="w-vh flex  pl-[209.6px] bg-white sticky top-0"
+        style={{ zIndex: 1000 }}>
       <Button>
-          {/* {(isCheckedRating || isCheckedPureVeg) && <FilterBtn filterCount={filterCount} />} */}
+          {(isCheckedRating || isCheckedPubsBars) && <FilterBtn filterCount={filterCount} />}
           <Filter />
           <p className="text-slate-500">Filters</p>
         </Button>
         <GoldBtn>Gold</GoldBtn>
-        <Button>Rating: 4.0+</Button>
-        <Button>Pubs & Bars</Button>
+        <Button
+          className={`${
+            isCheckedRating
+              ? "bg-red-400 text-slate-100"
+              : "fill-current text-slate-500"
+          }`}
+          onClick={handleRatingFilterToggle}
+        >
+          {isCheckedRating ? (
+            <div className="flex">
+              Rating: 4.0+
+              <Cross />
+            </div>
+          ) : (
+            <div>Rating: 4.0+</div>
+          )}
+        </Button>
+
+        <Button
+          className={`${
+            isCheckedPubsBars
+              ? "bg-red-400 text-slate-100"
+              : "fill-current text-slate-500"
+          }`}
+          onClick={handlePubsBarsFilterToggle}
+        >
+          {isCheckedPubsBars ? (
+            <div className="flex">
+              Pubs & Bars
+              <Cross />
+            </div>
+          ) : (
+            <div>Pubs & Bars</div>
+          )}
+        </Button>
       </div>
 
       <div className="mx-[209.6px]">
@@ -95,10 +179,22 @@ function NightLife() {
       <div className="text-[30px] mt-[10px] mb-8 mx-[209.6px]">Trending dining restaurants in your City</div>
 
       <div>
-        <div className="grid gap-x-4 gap-y-3 mx-[209.6px] grid-cols-3">
-          {Products.map((item) => (
-            <Card key={item.id} data={item} />
-          ))}
+      <div className="grid gap-x-4 gap-y-3 mx-[209.6px] grid-cols-3">
+        {isCheckedRating && isCheckedPubsBars
+            ? filteredBothsProducts.map((product) => (
+                <DiningOutCard key={product.id} data={product} />
+              ))
+            : isCheckedRating
+            ? filteredRatingProducts.map((product) => (
+                <DiningOutCard key={product.id} data={product} />
+              ))
+            : isCheckedPubsBars
+            ? filteredPubsBarsProducts.map((product) => (
+                <DiningOutCard key={product.id} data={product} />
+              ))
+            : DiningOutNightLifeProducts.map((product) => (
+                <DiningOutCard key={product.id} data={product} />
+              ))}
         </div>
       </div>
 

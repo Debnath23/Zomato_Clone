@@ -71,7 +71,7 @@ function ProductsList() {
     <div>
       <SearchBar />
 
-      <div className="h-auto mt-8 mx-[209.6px]">
+      <div className="h-auto mt-8 ml-[209.6px]">
         <div className="w-auto flex">
           <Link to="/delivery">
             <div>
@@ -118,11 +118,11 @@ function ProductsList() {
             </div>
           </Link>
         </div>
-        <hr />
+        
       </div>
-
+      <hr />
       <div
-        className="w-full flex  mx-[209.6px] bg-white sticky top-0"
+        className="w-vh flex  pl-[209.6px] bg-white sticky top-0"
         style={{ zIndex: 1000 }}
       >
         <Button>
@@ -191,6 +191,7 @@ function ProductsList() {
           )}
         </div>
       </div>
+      
 
       <Carousel items={CarouselItems} />
       <CarouselBrand items={Brands} />

@@ -5,7 +5,7 @@ import Button from "../components/Button/Button";
 import GoldBtn from "../components/Button/GoldBtn";
 import CollectionsCarousel from "../components/Carousel/CollectionsCarousel";
 import { DiningOutImage } from "../components/Products/Products";
-import { DiningOutProducts } from "../components/Products/Products";
+import { DiningOutNightLifeProducts } from "../components/Products/Products";
 import DiningOutCard from "../components/Card/DiningOutCard";
 import { Link } from 'react-router-dom';
 import Filter from "../components/Icons/Filter";
@@ -13,10 +13,10 @@ import FilterBtn from "../components/Button/FilterBtn";
 import Cross from "../components/Icons/Cross";
 
 function DiningOut() {
-  const [filteredRatingProducts, setFilteredRatingProducts] = useState(DiningOutProducts);
-  const [filteredOutDoorProducts, setFilteredOutDoorProducts] = useState(DiningOutProducts);
-  const [filteredServesAlcoholProducts, setFilteredServesAlcoholProducts] = useState(DiningOutProducts);
-  const [filteredBothsProducts, setFilteredBothsProducts] = useState(DiningOutProducts);
+  const [filteredRatingProducts, setFilteredRatingProducts] = useState(DiningOutNightLifeProducts);
+  const [filteredOutDoorProducts, setFilteredOutDoorProducts] = useState(DiningOutNightLifeProducts);
+  const [filteredServesAlcoholProducts, setFilteredServesAlcoholProducts] = useState(DiningOutNightLifeProducts);
+  const [filteredBothsProducts, setFilteredBothsProducts] = useState(DiningOutNightLifeProducts);
   const [isCheckedRating, setIsCheckedRating] = useState(false);
   const [isCheckedOutDoor, setIsCheckedOutDoor] = useState(false);
   const [isCheckedServesAlcohol, setIsCheckedServesAlcohol] = useState(false);
@@ -41,10 +41,10 @@ function DiningOut() {
 
     let filtered;
     if (!isCheckedOutDoor) {
-      filtered = DiningOutProducts.filter((product) => product.outdoorSeating == true);
+      filtered = DiningOutNightLifeProducts.filter((product) => product.outdoorSeating == true);
       setFilterCount((prevCount) => prevCount + 1);
     } else {
-      filtered = DiningOutProducts;
+      filtered = DiningOutNightLifeProducts;
       setFilterCount((prevCount) => prevCount - 1);
     }
     setFilteredOutDoorProducts(filtered);
@@ -55,17 +55,17 @@ function DiningOut() {
 
     let filtered;
     if (!isCheckedServesAlcohol) {
-      filtered = DiningOutProducts.filter((product) => product.outdoorSeating == true);
+      filtered = DiningOutNightLifeProducts.filter((product) => product.outdoorSeating == true);
       setFilterCount((prevCount) => prevCount + 1);
     } else {
-      filtered = DiningOutProducts;
+      filtered = DiningOutNightLifeProducts;
       setFilterCount((prevCount) => prevCount - 1);
     }
     setFilteredServesAlcoholProducts(filtered);
   };
 
   useEffect(() => {
-    const filtered = DiningOutProducts.filter((product) => {
+    const filtered = DiningOutNightLifeProducts.filter((product) => {
       return (
         isCheckedRating &&
         product.rating >= 4.0 &&
@@ -82,7 +82,7 @@ function DiningOut() {
     <div>
       <SearchBar />
       
-      <div className="h-auto mt-8 mx-[209.6px]">
+      <div className="h-auto mt-8 ml-[209.6px]">
       <div className="w-auto flex">
         <Link to="/delivery">
           <div>
@@ -137,13 +137,14 @@ function DiningOut() {
       </div>
       <hr/>
     </div>
+    <hr />
 
       <div>
         <CollectionsCarousel items={DiningOutImage}/>
       </div>
 
       
-      <div className="w-full flex  mx-[209.6px] bg-white sticky top-0"
+      <div className="w-vh flex  pl-[209.6px] bg-white sticky top-0"
         style={{ zIndex: 1000 }}>
       <Button>
           {(isCheckedRating || isCheckedOutDoor || isCheckedServesAlcohol) && <FilterBtn filterCount={filterCount} />}
@@ -232,7 +233,7 @@ function DiningOut() {
             ? filteredServesAlcoholProducts.map((product) => (
                 <DiningOutCard key={product.id} data={product} />
               ))
-            : DiningOutProducts.map((product) => (
+            : DiningOutNightLifeProducts.map((product) => (
                 <DiningOutCard key={product.id} data={product} />
               ))}
         </div>

@@ -370,7 +370,7 @@ export const NightLifeImage = [
   'https://b.zmtcdn.com/data/pictures/1/20588041/bb64c43bce824de95cad47000f5584eb_featured_v2.jpg',
 ];
 
-export const DiningOutProducts = [
+export const DiningOutNightLifeProducts = [
   {
     id: 1,
     image: "https://b.zmtcdn.com/data/pictures/7/19283687/58656bb1d3f43e00b9a7d2d4a7ab1a49_featured_v2.jpg" ,
@@ -381,6 +381,7 @@ export const DiningOutProducts = [
     distance: 3.9,
     outdoorSeating: false,
     servesAlcohol: true,
+    pubsBars: true,
   },
   {
     id: 2,
@@ -392,6 +393,7 @@ export const DiningOutProducts = [
     distance: 2,
     outdoorSeating: false,
     servesAlcohol: true,
+    pubsBars: true,
   },
   {
     id: 3,
@@ -403,6 +405,7 @@ export const DiningOutProducts = [
     distance: 1.9,
     outdoorSeating: false,
     servesAlcohol: false,
+    pubsBars: false,
   },
   {
     id: 4,
@@ -414,6 +417,7 @@ export const DiningOutProducts = [
     distance: 2.6,
     outdoorSeating: true,
     servesAlcohol: true,
+    pubsBars: true,
   },
   {
     id: 5,
@@ -425,6 +429,7 @@ export const DiningOutProducts = [
     distance: 3.7,
     outdoorSeating: true,
     servesAlcohol: true,
+    pubsBars: false,
   },
   {
     id: 6,
@@ -436,6 +441,7 @@ export const DiningOutProducts = [
     distance: 5,
     outdoorSeating: true,
     servesAlcohol: true,
+    pubsBars: false,
   },
   {
     id: 7,
@@ -447,6 +453,7 @@ export const DiningOutProducts = [
     distance: 6,
     outdoorSeating: true,
     servesAlcohol: true,
+    pubsBars: true,
   },
   {
     id: 8,
@@ -458,6 +465,7 @@ export const DiningOutProducts = [
     distance: 7.1,
     outdoorSeating: true,
     servesAlcohol: false,
+    pubsBars: true,
   },
   {
     id: 9,
@@ -469,6 +477,7 @@ export const DiningOutProducts = [
     distance: 2.6,
     outdoorSeating: true,
     servesAlcohol: false,
+    pubsBars: true,
   },
   {
     id: 10,
@@ -480,6 +489,7 @@ export const DiningOutProducts = [
     distance: 4.2,
     outdoorSeating: false,
     servesAlcohol: true,
+    pubsBars: false,
   },
   {
     id: 11,
@@ -491,6 +501,7 @@ export const DiningOutProducts = [
     distance: 4,
     outdoorSeating: true,
     servesAlcohol: false,
+    pubsBars: true,
   },
   {
     id: 12,
@@ -502,6 +513,7 @@ export const DiningOutProducts = [
     distance: 4.2,
     outdoorSeating: false,
     servesAlcohol: false,
+    pubsBars: true,
   },
   {
     id: 13,
@@ -513,6 +525,7 @@ export const DiningOutProducts = [
     distance: 7.2,
     outdoorSeating: false,
     servesAlcohol: true,
+    pubsBars: false,
   },
   {
     id: 14,
@@ -524,6 +537,7 @@ export const DiningOutProducts = [
     distance: 5.2,
     outdoorSeating: true,
     servesAlcohol: false,
+    pubsBars: false,
   },
   {
     id: 15,
@@ -535,6 +549,7 @@ export const DiningOutProducts = [
     distance: 4.9,
     outdoorSeating: false,
     servesAlcohol: false,
+    pubsBars: false,
   },
   {
     id: 16,
@@ -546,6 +561,7 @@ export const DiningOutProducts = [
     distance: 4.5,
     outdoorSeating: true,
     servesAlcohol: false,
+    pubsBars: false,
   },
   {
     id: 17,
@@ -557,6 +573,7 @@ export const DiningOutProducts = [
     distance: 4.3,
     outdoorSeating: true,
     servesAlcohol: true,
+    pubsBars: false,
   },
   {
     id: 18,
@@ -568,5 +585,6 @@ export const DiningOutProducts = [
     distance: 5.8,
     outdoorSeating: true,
     servesAlcohol: true,
+    pubsBars: true,
   },
 ]
